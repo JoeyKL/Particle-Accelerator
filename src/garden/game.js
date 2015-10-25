@@ -2,7 +2,7 @@ function newParticleEntity(world, x, y, mass, charge) {
     var ret = newCircleEntity(world, x, y, mass);
     addMotion(ret);
     addPhysics(ret, mass);
-    addUniversalGravity(ret, 4);
+    addUniversalGravity(ret, 2);
     addMagnatism(ret, charge, 100);
     ret.behaviors.push({condition: offScreen, action: function(){
         newParticleEntity(this.world, Math.random()*this.world.width, Math.random()*this.world.height, this.mass, this.charge);
